@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head th:replace="header :: common-header">
+</head>
+<body>
+	<div class="preloader">
+		<div class="lds-ripple">
+			<div class="lds-pos"></div>
+			<div class="lds-pos"></div>
+		</div>
+	</div>
+	<div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5"
+		data-sidebartype="full" data-sidebar-position="absolute"
+		data-header-position="absolute" data-boxed-layout="full">
+		<div th:replace="header :: common-body" />
+		<div class="page-wrapper">
+			<div class="row">
+				<div class="col-lg-4 col-md-12 col-sm-12" style="margin: auto;">
+                        <div class="card white-box p-0">
+                            <div class="card-heading">
+							<div class="alert alert-danger" th:if="${incorrectPassword}">
+								<strong>Sai mật khẩu!</strong> Vui lòng nhập chính xác mật khẩu!
+							</div>
+							<div class="alert alert-danger" th:if="${equalPassword}">
+								<strong>Mật khẩu mới không trùng khớp!</strong>
+							</div>
+							<div class="alert alert-succss" th:if="${updateSuccess}">
+								<strong>Cập nhật thành công</strong>
+							</div>
+
+							<form th:action="@{/updateProfile}" method="post">
+								<input type="hidden" name="id" th:value="${employee.id}" />
+								<input type="hidden" name="id" th:value="${employee.username}" />
+								<div class="form-group">
+									<label for="userName">Tài khoản</label> <input
+										class="form-control" id="userName" name="username"
+										th:value="${employee.username}" />
+								</div>
+								<div class="form-group">
+									<label for="currentPassword">Mật khẩu hiện tại</label><input
+										type="password" class="form-control" id="currentPassword"
+										name="currentPassword" th:value="${currentPassword}" />
+								</div>
+								<div class="form-group">
+									<label for="txtNewPassword">Mật khẩu mới</label>&nbsp;<span
+										id="checkPasswordMatch" style="color: red;"></span> <input
+										type="password" class="form-control" id="txtNewPassword"
+										name="newPassword" />
+								</div>
+								<div class="form-group">
+									<label for="txtConfirmPassword">Nhập lại mật khẩu</label><input
+										type="password" class="form-control" id="txtConfirmPassword" name="confirmPassword" />
+								</div>
+
+								<button id="updateUserInfoButton" type="submit"
+									class="btn btn-primary" style="margin: auto">Save</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div th:replace="header :: common-footer" />
+	<div th:replace="header :: common-scripts" />
+</body>
+</html>
