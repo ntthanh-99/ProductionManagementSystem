@@ -16,12 +16,97 @@
 			<div class="row">
 				<div class="col-md-12 col-lg-12 col-sm-12">
 					<div class="white-box">
-					<a href="/historyImportMaterial"><button type="button" class="btn btn-success">History</button> </a>
-						<div class="d-md-flex mb-3">
-							<table class="table">
-								
-								
-							</table>
+					<a href="/historyImportMaterial"><button type="button" class="btn btn-success">Lịch sử</button> </a>
+						<div class="d-md-flex mb-2">
+<!--							danh sách nhà cung cấp-->
+							<div class="row" style="width: 50%">
+								<div class="col-md-12 col-lg-12 col-sm-12">
+									<div class="white-box">
+										<div class="d-md-flex mb-3">
+											<h3 class="box-title mb-0">Danh sách nhà cung cấp</h3>
+											<div class="col-md-3 col-sm-4 col-xs-6 ms-auto" style="width: 50%;">
+												<input type="text" placeholder="Tìm kiếm nhà cung cấp..." class="form-control mt-0">
+											</div>
+										</div>
+										<div class="table-responsive">
+											<table class="table no-wrap">
+												<thead>
+												<tr>
+													<th class="border-top-0">Chọn</th>
+													<th class="border-top-0">Tên nhà cung cấp</th>
+													<th class="border-top-0">Địa chỉ</th>
+													<th class="border-top-0">Số điện thoại</th>
+												</tr>
+												</thead>
+												<tbody>
+												<tr>
+													<td>
+														<div class="custom-control custom-checkbox">
+															<input type="checkbox" class="custom-control-input" id="supplierChecked">
+														</div>
+													</td>
+													<td class="txt-oflo">Elite admin</td>
+													<td>SALE</td>
+													<td class="txt-oflo">April 18, 2021</td>
+												</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+							</div>
+
+<!--							danh sách sản phẩm-->
+							<div class="row" style="margin-left: 20px !important; width: 50%">
+								<div class="col-md-12 col-lg-12 col-sm-12">
+									<div class="white-box">
+										<div class="d-md-flex mb-3">
+											<h3 class="box-title mb-0">Danh sách sản phẩm</h3>
+											<div class="col-md-3 col-sm-4 col-xs-6 ms-auto" style="width: 50%;">
+												<input type="text" placeholder="Tìm kiếm sản phẩm..." class="form-control mt-0">
+											</div>
+										</div>
+										<div class="table-responsive">
+											<table class="table no-wrap">
+												<thead>
+												<tr>
+													<th class="border-top-0">Chọn</th>
+													<th class="border-top-0">Tên sản phẩm</th>
+													<th class="border-top-0">Giá</th>
+													<th class="border-top-0">Số lượng</th>
+													<th class="border-top-0">Miêu tả</th>
+												</tr>
+												</thead>
+												<tbody>
+												<tr>
+													<td><div class="custom-control custom-checkbox">
+														<input type="checkbox" class="custom-control-input" id="productChecked">
+													</div></td>
+													<td class="txt-oflo">Elite admin</td>
+													<td>SALE</td>
+													<td class="txt-oflo">April 18, 2021</td>
+													<td class="txt-oflo">April 18, 2021</td>
+												</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div style="display: flex;">
+							<div style="display: flex; flex-direction: column; padding-left: 30px">
+								<div class="" style="display: flex">
+									<p>Nhập số lượng nhập</p>
+									<input type="text" placeholder="Số lượng nhập" class="form-control mt-0">
+								</div>
+								<div class="">
+									<button type="button" class="btn btn-success">Nhập tiếp</button>
+								</div>
+							</div>
+							<div class="col-md-3 col-sm-4 col-xs-6 ms-auto" style="padding-right: 30px">
+								<button type="button" class="btn btn-success">Tạo hóa đơn</button>
+							</div>
 						</div>
 					</div>
 				</div>
