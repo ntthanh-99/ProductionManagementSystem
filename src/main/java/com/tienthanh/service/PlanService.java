@@ -4,11 +4,17 @@ import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 
-import com.tienthanh.domain.DayPlan;
+import com.tienthanh.domain.Employee;
+import com.tienthanh.domain.LineWeekPlan;
+import com.tienthanh.domain.ProductionLine;
 import com.tienthanh.domain.WeekPlan;
 
 public interface PlanService {
-	List<DayPlan> findByDate(LocalDateTime localDateTime); // nhap vao ngay -> tra ve lich ca tuan
+	List<WeekPlan> findByDate(Date date);
 
-	WeekPlan findByDate(Date date);
+	WeekPlan createWeekPlan(WeekPlan weekPlan, List<ProductionLine> productionLineList, Employee employee);
+
+	WeekPlan updateWeekPlan(WeekPlan weekPlan, List<ProductionLine> productionLineList, Employee employee);
+
+	WeekPlan findById(Long id);
 }

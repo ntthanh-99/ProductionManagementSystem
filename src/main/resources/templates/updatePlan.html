@@ -18,8 +18,9 @@
 					<div class="white-box">
 					<h3 style= "color: green; text-align: center" th:text="${message}"></h3>
 						<div class="d-md-flex mb-3">
-							<form th:action="@{/addNewPlan}" method="post" th:object="${weekPlan}" style="margin-left: 50px;">
+							<form th:action="@{/updatePlan}" method="post" th:object="${weekPlan}" style="margin-left: 50px;">
 								<table class="table">
+									<input type="hidden" name="id" th:value="${weekPlan.id}">
 									<tr>
 										<th></th>
 										<th>Monday </th>

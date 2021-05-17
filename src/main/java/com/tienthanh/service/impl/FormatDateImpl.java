@@ -26,7 +26,7 @@ public class FormatDateImpl {
 				Date date = Date.from(localDate.minusDays(day - i).atZone(ZoneId.systemDefault()).toInstant());
 				result.add(date);
 			} else {
-				Date date = Date.from(localDate.plusDays(day - i).atZone(ZoneId.systemDefault()).toInstant());
+				Date date = Date.from(localDate.plusDays(i - day).atZone(ZoneId.systemDefault()).toInstant());
 				result.add(date);
 			}
 		}

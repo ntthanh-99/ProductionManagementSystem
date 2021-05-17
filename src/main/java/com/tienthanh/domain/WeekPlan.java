@@ -21,14 +21,13 @@ public class WeekPlan extends AbstractClass{
 	private Date endTime;
 	
 	@OneToMany(cascade = CascadeType.ALL,mappedBy = "weekPlan")
-	private List<DayPlan> weekPlan;
+	private List<LineWeekPlan> weekPlan;
 	
 	@ManyToOne
 	@JoinColumn(name="employee_id")
 	private Employee employee;
 	
 	public WeekPlan() {
-		
 	}
 
 	public Long getId() {
@@ -55,11 +54,11 @@ public class WeekPlan extends AbstractClass{
 		this.endTime = endTime;
 	}
 
-	public List<DayPlan> getWeekPlan() {
+	public List<LineWeekPlan> getWeekPlan() {
 		return weekPlan;
 	}
 
-	public void setWeekPlan(List<DayPlan> weekPlan) {
+	public void setWeekPlan(List<LineWeekPlan> weekPlan) {
 		this.weekPlan = weekPlan;
 	}
 

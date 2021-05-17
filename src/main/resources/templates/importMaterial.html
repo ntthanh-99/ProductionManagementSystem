@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="header :: common-header"/>
+<body>
+	<div class="preloader">
+		<div class="lds-ripple">
+			<div class="lds-pos"></div>
+			<div class="lds-pos"></div>
+		</div>
+	</div>
+	<div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5"
+		data-sidebartype="full" data-sidebar-position="absolute"
+		data-header-position="absolute" data-boxed-layout="full">
+		<div th:replace="header :: common-body" />
+		<div class="page-wrapper">
+			<div class="row">
+				<div class="col-md-12 col-lg-12 col-sm-12">
+					<div class="white-box">
+					<a href="/historyImportMaterial"><button type="button" class="btn btn-success">History</button> </a>
+						<div class="d-md-flex mb-3">
+							<table class="table">
+								
+								
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div th:replace="header :: common-footer" />
+	<div th:replace="header :: common-scripts" />
+</body>
+</html>
