@@ -17,7 +17,8 @@
 				<div class="col-md-12 col-lg-12 col-sm-12">
 					<div class="white-box">
 						<div class="d-md-flex mb-3">
-							<form th:action="@{addNewAccount}" method="post" th:object="${newEmployee}" style="margin-left: 50px;">
+							<form th:action="@{/updateAccount}" method="post" th:object="${updateEmployee}" style="margin-left: 50px;">
+								<input type="hidden" id="id" name="id" th:field="*{id}" />
 								<div class="form-group">
 									<label for="username">Username</label> <input
 										class="form-control" id="userName" name="username"
@@ -26,7 +27,7 @@
 								<div class="form-group">
 									<label for="password">Password</label><input
 										type="password" class="form-control" id="password"
-										name="password" th:field="*{password}" />
+										name="password" placeholder="*****" th:field="*{password}"/>
 								</div>
 								<div class="form-group">
 									<label for="position">Position</label>

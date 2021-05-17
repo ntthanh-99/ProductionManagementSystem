@@ -58,5 +58,17 @@ public class EmployeeServiceImpl implements EmployeeService{
 		// TODO Auto-generated method stub
 		return (List<Employee>) employeeRepository.findAll();
 	}
+
+	@Override
+	public Employee findById(Long id) {
+		// TODO Auto-generated method stub
+		return employeeRepository.findById(id).get();
+	}
+
+	@Override
+	public Employee save(Employee employee) {
+		// TODO Auto-generated method stub
+		return employeeRepository.save(employee);
+	}
 	
 }

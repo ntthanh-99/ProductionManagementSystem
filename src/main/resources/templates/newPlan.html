@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="header :: common-header"/>
+<body>
+	<div class="preloader">
+		<div class="lds-ripple">
+			<div class="lds-pos"></div>
+			<div class="lds-pos"></div>
+		</div>
+	</div>
+	<div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5"
+		data-sidebartype="full" data-sidebar-position="absolute"
+		data-header-position="absolute" data-boxed-layout="full">
+		<div th:replace="header :: common-body" />
+		<div class="page-wrapper">
+			<div class="row">
+				<div class="col-md-12 col-lg-12 col-sm-12">
+					<div class="white-box">
+						<div class="d-md-flex mb-3">
+							<form th:action="@{/addNewPlan}" method="post" th:object="${statusList}" style="margin-left: 50px;">
+								<table class="table">
+									<tr>
+										<th></th>
+										<th>Monday </th>
+										<th>Tuesday </th>
+										<th>Wednesday</th>
+										<th>Thursday </th>
+										<th>Friday </th>
+										<th>Saturday </th>
+										<th>Sunday </th>
+									</tr>
+									<tr th:each="productionLine : ${productionLineList}">
+										<td th:text="${productionLine.name}"></td>
+										<td> <select class="form-control" id="status" name="status" >
+        									<option th:value="'Enable'" th:text="Enable"></option>
+        									<option th:value="'Contruct'" th:text="Contruct"></option>
+        									<option th:value="'Repair'" th:text="Repair"></option>
+        									<option th:value="'Maintain'" th:text="Maintain"></option>
+        									<option th:value="'Disable'" th:text="Disable"></option>
+      									</select></td>
+      									<td> <select class="form-control" id="status" name="status" >
+        									<option th:value="'Enable'" th:text="Enable"></option>
+        									<option th:value="'Contruct'" th:text="Contruct"></option>
+        									<option th:value="'Repair'" th:text="Repair"></option>
+        									<option th:value="'Maintain'" th:text="Maintain"></option>
+        									<option th:value="'Disable'" th:text="Disable"></option>
+      									</select></td>
+      									<td> <select class="form-control" id="status" name="status" >
+        									<option th:value="'Enable'" th:text="Enable"></option>
+        									<option th:value="'Contruct'" th:text="Contruct"></option>
+        									<option th:value="'Repair'" th:text="Repair"></option>
+        									<option th:value="'Maintain'" th:text="Maintain"></option>
+        									<option th:value="'Disable'" th:text="Disable"></option>
+      									</select></td>
+      									<td> <select class="form-control" id="status" name="status" >
+        									<option th:value="'Enable'" th:text="Enable"></option>
+        									<option th:value="'Contruct'" th:text="Contruct"></option>
+        									<option th:value="'Repair'" th:text="Repair"></option>
+        									<option th:value="'Maintain'" th:text="Maintain"></option>
+        									<option th:value="'Disable'" th:text="Disable"></option>
+      									</select></td>
+      									<td> <select class="form-control" id="status" name="status" >
+        									<option th:value="'Enable'" th:text="Enable"></option>
+        									<option th:value="'Contruct'" th:text="Contruct"></option>
+        									<option th:value="'Repair'" th:text="Repair"></option>
+        									<option th:value="'Maintain'" th:text="Maintain"></option>
+        									<option th:value="'Disable'" th:text="Disable"></option>
+      									</select></td>
+      									<td> <select class="form-control" id="status" name="status" >
+        									<option th:value="'Enable'" th:text="Enable"></option>
+        									<option th:value="'Contruct'" th:text="Contruct"></option>
+        									<option th:value="'Repair'" th:text="Repair"></option>
+        									<option th:value="'Maintain'" th:text="Maintain"></option>
+        									<option th:value="'Disable'" th:text="Disable"></option>
+      									</select></td>
+      									<td> <select class="form-control" id="status" name="status" >
+        									<option th:value="'Enable'" th:text="Enable"></option>
+        									<option th:value="'Contruct'" th:text="Contruct"></option>
+        									<option th:value="'Repair'" th:text="Repair"></option>
+        									<option th:value="'Maintain'" th:text="Maintain"></option>
+        									<option th:value="'Disable'" th:text="Disable"></option>
+      									</select></td>
+      									
+      									
+									</tr>
+								</table>
+								<button id="updateUserInfoButton" type="submit"
+									class="btn btn-primary" style="margin: auto">Save</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div th:replace="header :: common-footer" />
+	<div th:replace="header :: common-scripts" />
+</body>
+</html>

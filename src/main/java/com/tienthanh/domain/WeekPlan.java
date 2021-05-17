@@ -1,5 +1,6 @@
 package com.tienthanh.domain;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -16,8 +17,8 @@ public class WeekPlan extends AbstractClass{
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	private int month;
-	private String time;
+	private Date startTime;
+	private Date endTime;
 	
 	@OneToMany(cascade = CascadeType.ALL,mappedBy = "weekPlan")
 	private List<DayPlan> weekPlan;
@@ -38,20 +39,20 @@ public class WeekPlan extends AbstractClass{
 		this.id = id;
 	}
 
-	public int getMonth() {
-		return month;
+	public Date getStartTime() {
+		return startTime;
 	}
 
-	public void setMonth(int month) {
-		this.month = month;
+	public void setStartTime(Date startTime) {
+		this.startTime = startTime;
 	}
 
-	public String getTime() {
-		return time;
+	public Date getEndTime() {
+		return endTime;
 	}
 
-	public void setTime(String time) {
-		this.time = time;
+	public void setEndTime(Date endTime) {
+		this.endTime = endTime;
 	}
 
 	public List<DayPlan> getWeekPlan() {

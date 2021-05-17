@@ -17,23 +17,26 @@
 				<div class="col-md-12 col-lg-12 col-sm-12">
 					<div class="white-box">
 						<div class="d-md-flex mb-3">
-							<form th:action="@{addNewAccount}" method="post" th:object="${newEmployee}" style="margin-left: 50px;">
+							<form th:action="@{/updateProductionLine}" method="post" th:object="${updatedProductionLine}" style="margin-left: 50px;">
+								<input type="hidden" id="id" name="id" th:field="*{id}" />
 								<div class="form-group">
-									<label for="username">Username</label> <input
-										class="form-control" id="userName" name="username"
-										th:field="*{username}" />
+									<label for="name">Name</label> <input
+										class="form-control" id="Name" name="name"
+										th:field="*{name}" />
 								</div>
 								<div class="form-group">
-									<label for="password">Password</label><input
-										type="password" class="form-control" id="password"
-										name="password" th:field="*{password}" />
+									<label for="description">Description</label><textarea
+										type="text" class="form-control" id="description"
+										name="description" th:field="*{description}" />
 								</div>
 								<div class="form-group">
-									<label for="position">Position</label>
-      								<select class="form-control" id="position" name="position" th:field="*{position}">
-        								<option th:value="'admin'" th:text="Admin"></option>
-        								<option th:value="'warehouse'" th:text="Warehouse"></option>
-        								<option th:value="'seller'" th:text="Seller"></option>
+									<label for="status">Status</label>
+      								<select class="form-control" id="status" name="status" th:field="*{status}">
+      									<option th:value="'Contruct'" th:text="Contruct"></option>
+        								<option th:value="'Enable'" th:text="Enable"></option>
+        								<option th:value="'Repair'" th:text="Repair"></option>
+        								<option th:value="'Maintain'" th:text="Maintain"></option>
+        								<option th:value="'Disable'" th:text="Disable"></option>
       								</select>
 								</div>
 								<button id="updateUserInfoButton" type="submit"

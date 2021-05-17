@@ -14,4 +14,8 @@ public interface EmployeeService {
 	Employee changePassword(Employee employee, String newPassword);
 	
 	List<Employee> findAll();
+	
+	Employee findById(Long id);
+	
+	Employee save(Employee employee);
 }
