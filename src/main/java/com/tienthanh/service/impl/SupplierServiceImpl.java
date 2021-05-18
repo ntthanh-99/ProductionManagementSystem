@@ -20,4 +20,10 @@ public class SupplierServiceImpl implements SupplierService {
 		return (List<Supplier>) supplierRepository.findAll();
 	}
 
+	@Override
+	public Supplier findById(Long id) {
+		// TODO Auto-generated method stub
+		return supplierRepository.findById(id).get();
+	}
+
 }

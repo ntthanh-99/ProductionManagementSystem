@@ -7,4 +7,6 @@ import com.tienthanh.domain.Supplier;
 public interface SupplierService {
 	List<Supplier> findAll();
 
+	Supplier findById(Long id);
+
 }

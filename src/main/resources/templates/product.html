@@ -16,17 +16,18 @@
 			<div class="row">
 				<div class="col-md-12 col-lg-12 col-sm-12">
 					<div class="white-box">
-					<a href="/addNewProductionLine"><button type="button" class="btn btn-success">New ProductionLine</button> </a>
+					<h3 style="text-align: center">DS sản phẩm</h3>
+					<a href="/addNewProduct"><button type="button" class="btn btn-success">Sản phẩm mới</button> </a>
 						<div class="d-md-flex mb-3">
 							<table class="table">
 								<tr>
 									<th>Id</th>
-									<th>Name</th>
-									<th>Description</th>
-									<th>Quanlity</th>
-									<th>Prince</th>
-									<th>Create Date</th>
-									<th>Modify Date</th>
+									<th>Tên</th>
+									<th>Mô tả</th>
+									<th>Số lượng</th>
+									<th>Giá</th>
+									<th>Ngày tạo</th>
+									<th>Ngày sửa</th>
 									<th>Action</th>
 								</tr>
 								<tr th:each="product : ${productList}">

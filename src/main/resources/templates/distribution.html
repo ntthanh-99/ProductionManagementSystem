@@ -16,40 +16,40 @@
 			<div class="row">
 				<div class="col-md-12 col-lg-12 col-sm-12">
 					<div class="white-box">
-					<h3 style="text-align: center">Nhập kho</h3>
-					<form action="/addImportMaterial" method= "get">
-					<a href="/historyImportMaterial"><button type="button" class="btn btn-success">Lịch sử</button> </a>
+					<h3 style="text-align: center">Phân phối</h3>
+					<form action="/addDistribution" method= "get">
+					<a href="/historyDistribution"><button type="button" class="btn btn-success">Lịch sử</button> </a>
 						<div class="d-md-flex mb-2">
 
 							<div class="row" style="width: 50%">
 								<div class="col-md-12 col-lg-12 col-sm-12">
 									<div class="white-box">
 										<div class="d-md-flex mb-3">
-											<h3 class="box-title mb-0">Danh sách nhà cung cấp</h3>
+											<h3 class="box-title mb-0">Danh sách nhà phân phối</h3>
 											<div class="col-md-3 col-sm-4 col-xs-6 ms-auto" style="width: 50%;">
-												<input type="text" placeholder="Tìm kiếm nhà cung cấp" class="form-control mt-0" id="supplierInput" onkeyup="filterSearchSupplier()">
+												<input type="text" placeholder="Tìm kiếm nhà phân phối" class="form-control mt-0" id="distributorInput" onkeyup="filterSearchDistributor()">
 											</div>
 										</div>
 										<div class="table-responsive">
-											<table class="table no-wrap" id="supplierTable">
+											<table class="table no-wrap" id="distributorTable">
 												<thead>
 												<tr>
 													<th class="border-top-0">Chọn</th>
-													<th class="border-top-0">Tên nhà cung cấp</th>
+													<th class="border-top-0">Tên nhà phân phối</th>
 													<th class="border-top-0">Địa chỉ</th>
 													<th class="border-top-0">Số điện thoại</th>
 												</tr>
 												</thead>
 												<tbody>
-												<tr th:each="supplier : ${supplierList}">
+												<tr th:each="distributor : ${distributorList}">
 													<td>
 														<div class="custom-control custom-checkbox">
-															<input type="checkbox" class="custom-control-input" name="supplierId" th:value="${supplier.id}">
+															<input type="checkbox" class="custom-control-input" name="distributorId" th:value="${distributor.id}">
 														</div>
 													</td>
-													<td class="txt-oflo" th:text="${supplier.name}"></td>
-													<td th:text="${supplier.address}"></td>
-													<td class="txt-oflo" th:text="${supplier.phone}"></td>
+													<td class="txt-oflo" th:text="${distributor.name}"></td>
+													<td th:text="${distributor.address}"></td>
+													<td class="txt-oflo" th:text="${distributor.phone}"></td>
 												</tr>
 												</tbody>
 											</table>
@@ -58,18 +58,18 @@
 								</div>
 							</div>
 
-<!--							danh sÃ¡ch sáº£n pháº©m-->
+
 							<div class="row" style="margin-left: 20px !important; width: 50%">
 								<div class="col-md-12 col-lg-12 col-sm-12">
 									<div class="white-box">
 										<div class="d-md-flex mb-3">
 											<h3 class="box-title mb-0">Danh sách sản phẩm</h3>
 											<div class="col-md-3 col-sm-4 col-xs-6 ms-auto" style="width: 50%;">
-												<input type="text" placeholder="Tìm kiếm sản phẩm" class="form-control mt-0" id="materialInput" onkeyup="filterSearchMaterial()">
+												<input type="text" placeholder="Tìm kiếm sản phẩm" class="form-control mt-0" id="productInput" onkeyup="filterSearchProduct()">
 											</div>
 										</div>
 										<div class="table-responsive">
-											<table class="table no-wrap" id="materialTable">
+											<table class="table no-wrap" id="productTable">
 												<thead>
 												<tr>
 													<th class="border-top-0">Chọn</th>
@@ -79,15 +79,15 @@
 												</tr>
 												</thead>
 												<tbody>
-												<tr th:each="material : ${materialList}">
+												<tr th:each="product : ${productList}">
 													<td>
 														<div class="custom-control custom-checkbox">
-															<input type="checkbox" class="custom-control-input" name="materialId" th:value="${material.id}">
+															<input type="checkbox" class="custom-control-input" name="productId" th:value="${product.id}">
 														</div>
 													</td>
-													<td class="txt-oflo" th:text="${material.name}"></td>
-													<td th:text="${material.quanlity}"></td>
-													<td class="txt-oflo" th:text="${material.priceImport}"></td>
+													<td class="txt-oflo" th:text="${product.name}"></td>
+													<td th:text="${product.quanlity}"></td>
+													<td class="txt-oflo" th:text="${product.price}"></td>
 												</tr>
 												</tbody>
 											</table>
@@ -100,14 +100,14 @@
 							<div style="display: flex; flex-direction: column; padding-left: 30px">
 								<div class="" style="display: flex">
 									<p>Nhập số lượng</p>
-									<input type="text" name="quanlity" placeholder="Số lượng nhập" class="form-control mt-0">
+									<input type="text" name="quanlity" placeholder="Số lượng phân phối" class="form-control mt-0">
 								</div>
 								<div class="">
-									<button type="submit" class="btn btn-success">Nhập</button>
+									<button type="submit" class="btn btn-success">Phân phối</button>
 								</div>
 							</div>
 							<div class="col-md-3 col-sm-4 col-xs-6 ms-auto" style="padding-right: 30px">
-								<a href="/createImportBill"><button type="button" class="btn btn-success">Tạo hóa đơn</button> </a>
+								<a href="/createDistributionBill"><button type="button" class="btn btn-success">Tạo hóa đơn</button> </a>
 							</div>
 						</div>
 						</form>

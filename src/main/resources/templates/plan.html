@@ -16,22 +16,31 @@
 			<div class="row">
 				<div class="col-md-12 col-lg-12 col-sm-12">
 					<div class="white-box">
-					<a href="/newPlan"><button type="button" class="btn btn-success">New Plan for next Week</button> </a>
-					<a th:href="@{/updatePlan(id=${id})}"><button type="button" class="btn btn-success">Change Plan</button> </a>
-					<a href="/nextPlan" style="margin-right: 0px"><button type="button" class="btn btn-success"></button>Next</a>
-					<a href="/previousPlan" style="margin-right: 0px"><button type="button" class="btn btn-success"></button>Previous</a>
+					<div style="text-align: center;">
+						<h3>Lịch</h3> <p th:text="${startDate}"/>
+						<p th:text="${endDate}"/>
+					</div>
+					<a href="/newPlan"><button type="button" class="btn btn-success">Lên lịch cho tuần kế tiếp</button> </a>
+					<a th:href="@{/updatePlan(id=${id})}"><button type="button" class="btn btn-success">Thay đổi lịch</button> </a>
+					<br>
+					<a href="/previousPlan" style="margin-left: 2px">
+						<img alt="" src="/image/icon/previous.png" width="40px">
+					</a>
+					<a href="/nextPlan" style="margin-right: 2px">
+						<img alt="" src="/image/icon/next.png" width="40px">
+					</a>
 					<h3 style="text-align: center;color: red" th:text="${message}"></h3>
 						<div class="d-md-flex mb-3" th:if="${status}">
 							<table class="table">
 									<tr>
 										<th></th>
-										<th>Monday </th>
-										<th>Tuesday </th>
-										<th>Wednesday</th>
-										<th>Thursday </th>
-										<th>Friday </th>
-										<th>Saturday </th>
-										<th>Sunday </th>
+										<th>Thứ Hai</th>
+										<th>Thứ Ba</th>
+										<th>Thứ Tư</th>
+										<th>Thứ Năm</th>
+										<th>Thứ Sáu</th>
+										<th>Thứ Bảy</th>
+										<th>Chủ Nhật</th>
 									</tr>
 									<tr th:each="dayPlan: ${weekPlan}">
 										<td th:text="${dayPlan.productionLine.name}"></td>

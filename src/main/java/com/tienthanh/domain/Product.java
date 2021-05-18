@@ -15,7 +15,7 @@ public class Product extends AbstractClass{
 	private Long id;
 	private String name;
 	private String description;
-	private String quanlity;
+	private int quanlity;
 	private double price;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
@@ -49,11 +49,11 @@ public class Product extends AbstractClass{
 		this.description = description;
 	}
 
-	public String getQuanlity() {
+	public int getQuanlity() {
 		return quanlity;
 	}
 
-	public void setQuanlity(String quanlity) {
+	public void setQuanlity(int quanlity) {
 		this.quanlity = quanlity;
 	}
 

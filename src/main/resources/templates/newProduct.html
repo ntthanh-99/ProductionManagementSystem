@@ -16,30 +16,31 @@
 			<div class="row">
 				<div class="col-md-12 col-lg-12 col-sm-12">
 					<div class="white-box">
+					<h3 style="margin-left: 50px">Sản phẩm mới</h3>
 						<div class="d-md-flex mb-3">
 							<form th:action="@{/addNewProduct}" method="post" th:object="${newProduct}" style="margin-left: 50px;">
 								<div class="form-group">
-									<label for="name">Name</label> <input
+									<label for="name">Tên sản phẩm</label> <input
 										class="form-control" id="Name" name="name"
 										th:field="*{name}" />
 								</div>
 								<div class="form-group">
-									<label for="description">Description</label><textarea
+									<label for="description">Mô tả</label><textarea
 										type="text" class="form-control" id="description"
 										name="description" th:field="*{description}" />
 								</div>
 								<div class="form-group">
-									<label for="quanlity">Quanlity</label><input
+									<label for="quanlity">Số lượng</label><input
 										type="text" class="form-control" id="quanlity"
 										name="quanlity" th:field="*{quanlity}" />
 								</div>
 								<div class="form-group">
-									<label for="price">Price</label><input
+									<label for="price">Giá</label><input
 										type="text" class="form-control" id="price"
 										name="price" th:field="*{price}" />
 								</div>
 								<button id="updateUserInfoButton" type="submit"
-									class="btn btn-primary" style="margin: auto">Save</button>
+									class="btn btn-primary" style="margin: auto">Lưu</button>
 							</form>
 						</div>
 					</div>

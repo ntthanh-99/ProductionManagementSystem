@@ -1,6 +1,7 @@
 package com.tienthanh.controller;
 
 import java.security.Principal;
+import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Date;
@@ -38,6 +39,8 @@ public class PlanController {
 
 	private LocalDateTime localDateTime = LocalDateTime.now();
 
+	private SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+
 	@RequestMapping("/plan")
 	public String plan(Model model, Principal principal) {
 		Employee employee = employeeService.findByUsername(principal.getName());
@@ -51,6 +54,8 @@ public class PlanController {
 			model.addAttribute("weekPlan", weekPlan.getWeekPlan());
 			model.addAttribute("id", weekPlan.getId());
 			model.addAttribute("status", true);
+			model.addAttribute("startDate", sdf.format(weekPlan.getStartTime()));
+			model.addAttribute("endDate", sdf.format(weekPlan.getEndTime()));
 		} else {
 			String message = "Plan not Found!";
 			model.addAttribute("message", message);
@@ -69,6 +74,8 @@ public class PlanController {
 			model.addAttribute("weekPlan", weekPlan.getWeekPlan());
 			model.addAttribute("id", weekPlan.getId());
 			model.addAttribute("status", true);
+			model.addAttribute("startDate", sdf.format(weekPlan.getStartTime()));
+			model.addAttribute("endDate", sdf.format(weekPlan.getEndTime()));
 		} else {
 			String message = "Plan not Found!";
 			model.addAttribute("message", message);
@@ -87,6 +94,8 @@ public class PlanController {
 			model.addAttribute("weekPlan", weekPlan.getWeekPlan());
 			model.addAttribute("id", weekPlan.getId());
 			model.addAttribute("status", true);
+			model.addAttribute("startDate", sdf.format(weekPlan.getStartTime()));
+			model.addAttribute("endDate", sdf.format(weekPlan.getEndTime()));
 		} else {
 			String message = "Plan not Found!";
 			model.addAttribute("message", message);
@@ -98,7 +107,14 @@ public class PlanController {
 	public String newPlan(Model model, Principal principal) {
 		Employee employee = employeeService.findByUsername(principal.getName());
 		model.addAttribute("employee", employee);
-
+		LocalDateTime localDateTime2 = LocalDateTime.now();
+		List<WeekPlan> weekPlanList = planService
+				.findByDate(formatDate.convertLocalDateTimeToDate(LocalDateTime.now().plusDays(7)));
+		if (!weekPlanList.isEmpty()) {
+			String message = "Lịch đã được lên!";
+			model.addAttribute("message", message);
+			return "plan";
+		} else {
 		List<ProductionLine> productionLineList = productionLineService.findAll();
 
 		List<LineWeekPlan> LinePlanList = new ArrayList<LineWeekPlan>();
@@ -114,6 +130,7 @@ public class PlanController {
 		weekPlan.setWeekPlan(LinePlanList);
 		model.addAttribute("weekPlan", weekPlan);
 		return "newPlan";
+	}
 	}
 
 	@PostMapping("/addNewPlan")

@@ -16,21 +16,22 @@
 			<div class="row">
 				<div class="col-md-12 col-lg-12 col-sm-12">
 					<div class="white-box">
+					<h3 style="margin-left: 50px">Cập nhật thông tin dây chuyền</h3>
 						<div class="d-md-flex mb-3">
 							<form th:action="@{/updateProductionLine}" method="post" th:object="${updatedProductionLine}" style="margin-left: 50px;">
 								<input type="hidden" id="id" name="id" th:field="*{id}" />
 								<div class="form-group">
-									<label for="name">Name</label> <input
+									<label for="name">Tên dây chuyền</label> <input
 										class="form-control" id="Name" name="name"
 										th:field="*{name}" />
 								</div>
 								<div class="form-group">
-									<label for="description">Description</label><textarea
+									<label for="description">Mô tả</label><textarea
 										type="text" class="form-control" id="description"
 										name="description" th:field="*{description}" />
 								</div>
 								<div class="form-group">
-									<label for="status">Status</label>
+									<label for="status">Trạng thái</label>
       								<select class="form-control" id="status" name="status" th:field="*{status}">
       									<option th:value="'Contruct'" th:text="Contruct"></option>
         								<option th:value="'Enable'" th:text="Enable"></option>
@@ -40,7 +41,7 @@
       								</select>
 								</div>
 								<button id="updateUserInfoButton" type="submit"
-									class="btn btn-primary" style="margin: auto">Save</button>
+									class="btn btn-primary" style="margin: auto">Lưu</button>
 							</form>
 						</div>
 					</div>

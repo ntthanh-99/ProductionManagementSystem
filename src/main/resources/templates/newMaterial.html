@@ -16,25 +16,26 @@
 			<div class="row">
 				<div class="col-md-12 col-lg-12 col-sm-12">
 					<div class="white-box">
+					<h3 style="margin-left: 50px">Nguyên liệu mới mới</h3>
 						<div class="d-md-flex mb-3">
 							<form th:action="@{/addNewMaterial}" method="post" th:object="${newMaterial}" style="margin-left: 50px;">
 								<div class="form-group">
-									<label for="name">Name</label> <input
+									<label for="name">Tên nguyên liệu</label> <input
 										class="form-control" id="Name" name="name"
 										th:field="*{name}" />
 								</div>
 								<div class="form-group">
-									<label for="quanlity">Quanlity</label><input
+									<label for="quanlity">Số lượng</label><input
 										type="text" class="form-control" id="quanlity"
 										name="quanlity" th:field="*{quanlity}" />
 								</div>
 								<div class="form-group">
-									<label for="price">ImportPrice</label><input
+									<label for="price">Giá nhập</label><input
 										type="text" class="form-control" id="price"
 										name="price" th:field="*{priceImport}" />
 								</div>
 								<button id="updateUserInfoButton" type="submit"
-									class="btn btn-primary" style="margin: auto">Save</button>
+									class="btn btn-primary" style="margin: auto">Lưu</button>
 							</form>
 						</div>
 					</div>

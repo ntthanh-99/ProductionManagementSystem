@@ -16,17 +16,18 @@
 			<div class="row">
 				<div class="col-md-12 col-lg-12 col-sm-12">
 					<div class="white-box">
-					<a th:href="@{addNewAccount}"><button type="button" class="btn btn-success">New Employee</button> </a>
+					<h3 style="text-align: center">DS tài khoản</h3>
+					<a th:href="@{addNewAccount}"><button type="button" class="btn btn-success">Thêm tài khoản</button> </a>
 						<div class="d-md-flex mb-3">
 							<table class="table">
 								<tr>
 									<th>Id</th>
-									<th>Username</th>
-									<th>Password</th>
-									<th>Position</th>
-									<th>Status</th>
-									<th>Create Date</th>
-									<th>Modify Date</th>
+									<th>Tài khoản</th>
+									<th>Mật khẩu</th>
+									<th>Vị trí</th>
+									<th>Trạng thái</th>
+									<th>Ngày tạo</th>
+									<th>Ngày sửa</th>
 									<th>Action</th>
 								</tr>
 								<tr th:each="employee : ${employeeList}">

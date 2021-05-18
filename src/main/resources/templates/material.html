@@ -16,16 +16,17 @@
 			<div class="row">
 				<div class="col-md-12 col-lg-12 col-sm-12">
 					<div class="white-box">
-					<a href="/addNewMaterial"><button type="button" class="btn btn-success">New Material</button> </a>
+					<h3 style="text-align: center">DS nguyên liệu</h3>
+					<a href="/addNewMaterial"><button type="button" class="btn btn-success">Nguyên liệu mới</button> </a>
 						<div class="d-md-flex mb-3">
 							<table class="table">
 								<tr>
 									<th>Id</th>
-									<th>Name</th>
-									<th>Quanlity</th>
-									<th>ImportPrince</th>
-									<th>Create Date</th>
-									<th>Modify Date</th>
+									<th>Tên nguyên liệu</th>
+									<th>Số lượng</th>
+									<th>Giá nhập</th>
+									<th>Ngày tạo</th>
+									<th>Ngày sửa</th>
 									<th>Action</th>
 								</tr>
 								<tr th:each="material : ${materialList}">
