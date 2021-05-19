@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="header :: common-header"/>
+<style>
+	.my-custom-scrollbar {
+		position: relative;
+		height: 225px;
+		overflow: auto;
+	}
+	.table-wrapper-scroll-y {
+		display: block;
+	}
+</style>
 <body>
 	<div class="preloader">
 		<div class="lds-ripple">
@@ -30,8 +40,8 @@
 												<input type="text" placeholder="Tìm kiếm nhà cung cấp" class="form-control mt-0" id="supplierInput" onkeyup="filterSearchSupplier()">
 											</div>
 										</div>
-										<div class="table-responsive">
-											<table class="table no-wrap" id="supplierTable">
+										<div class="table-wrapper-scroll-y my-custom-scrollbar">
+											<table class="table table-bordered table-striped mb-0" id="supplierTable">
 												<thead>
 												<tr>
 													<th class="border-top-0">Chọn</th>
@@ -59,17 +69,17 @@
 							</div>
 
 <!--							danh sÃ¡ch sáº£n pháº©m-->
-							<div class="row" style="margin-left: 20px !important; width: 50%">
+							<div class="row" style="margin-left: 20px !important; width: 50%;">
 								<div class="col-md-12 col-lg-12 col-sm-12">
 									<div class="white-box">
 										<div class="d-md-flex mb-3">
-											<h3 class="box-title mb-0">Danh sách sản phẩm</h3>
+											<h3 class="box-title mb-0">Danh sách nguyên liệu</h3>
 											<div class="col-md-3 col-sm-4 col-xs-6 ms-auto" style="width: 50%;">
 												<input type="text" placeholder="Tìm kiếm sản phẩm" class="form-control mt-0" id="materialInput" onkeyup="filterSearchMaterial()">
 											</div>
 										</div>
-										<div class="table-responsive">
-											<table class="table no-wrap" id="materialTable">
+										<div class="table-wrapper-scroll-y my-custom-scrollbar">
+											<table class="table table-bordered table-striped mb-0" id="materialTable">
 												<thead>
 												<tr>
 													<th class="border-top-0">Chọn</th>

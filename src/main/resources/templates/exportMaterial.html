@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="header :: common-header"/>
+<style>
+	.my-custom-scrollbar {
+		position: relative;
+		height: 225px;
+		overflow: auto;
+	}
+	.table-wrapper-scroll-y {
+		display: block;
+	}
+</style>
 <body>
 	<div class="preloader">
 		<div class="lds-ripple">
@@ -30,8 +40,8 @@
 												<input type="text" placeholder="Tìm kiếm dây chuyền..." class="form-control mt-0" id="productionLineInput" onkeyup="filterSearchProductionLine()">
 											</div>
 										</div>
-										<div class="table-responsive">
-											<table class="table no-wrap" id="productionLineTable">
+										<div class="table-wrapper-scroll-y my-custom-scrollbar">
+											<table class="table table-bordered table-striped mb-0" id="productionLineTable">
 												<thead>
 												<tr>
 													<th class="border-top-0">Chọn</th>
@@ -66,8 +76,8 @@
 												<input type="text" placeholder="Tìm kiếm nguyên liệu..." class="form-control mt-0" id="materialInput" onkeyup="filterSearchMaterial()">
 											</div>
 										</div>
-										<div class="table-responsive">
-											<table class="table no-wrap" id="materialTable">
+										<div class="table-wrapper-scroll-y my-custom-scrollbar">
+											<table class="table table-bordered table-striped mb-0" id="materialTable">
 												<thead>
 												<tr>
 													<th class="border-top-0">Chọn</th>
